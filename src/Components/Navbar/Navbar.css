@@ -1,0 +1,46 @@
+.navbar {
+  height: 100px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: #bfefef;
+  box-shadow: 1px 3px 2px #f8c9c9;
+}
+.navbar .logo {
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  padding: 10px;
+}
+.navbar .logo img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: inherit;
+}
+.navbar .center {
+  margin: auto;
+}
+.navbar .center .search-bar input {
+  border-radius: 20px;
+  border: none;
+  padding: 10px;
+  width: 80%;
+  box-shadow: 0px 2px 3px 1px rgb(146, 155, 155);
+}
+.navbar .center .search-bar .search-icon {
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  transform: translateY(-50%);
+}
+.navbar .center .navbar-item {
+  border-radius: 10px;
+  background: white;
+  padding: 10px;
+  box-shadow: 0.5px 2px 1px #ea7c7c;
+  border: 0.5px solid rgb(220, 210, 210);
+  color: black;
+}
+.navbar .right-navbar {
+  margin: auto;
+}/*# sourceMappingURL=Navbar.css.map */
