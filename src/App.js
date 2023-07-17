@@ -1,12 +1,14 @@
 import './App.css';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
 import Banner from './Components/Banner/Banner';
 import LoginPage from './Pages/LoginPage/LoginPage';
 import RegisterPage from './Pages/RegisterPage/RegisterPage';
 import HomePage from './Pages/HomePage/HomePage';
 import { ToastContainer } from 'react-toastify';
+import { useSelector } from 'react-redux';
 function App() {
+   const isLoggedIn = useSelector(state => state.authentication.isLoggedIn);
    return (
       <div className="App">
          <BrowserRouter>
@@ -19,11 +21,11 @@ function App() {
                   </>
                } />
             </Routes>
-            <Routes>
-               <Route path="/login" element={<LoginPage />} />
+            <Routes >
+               <Route path="/login" element={isLoggedIn ? <Navigate to="/" replace /> : <LoginPage />} />
             </Routes>
             <Routes>
-               <Route path="/register" element={<RegisterPage />} />
+               <Route path="/register" element={isLoggedIn ? <Navigate to="/" replace/>:  <RegisterPage/>} />
             </Routes>
          </BrowserRouter>
          <ToastContainer className="toast-position"

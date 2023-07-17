@@ -1,15 +1,25 @@
 import { userConstants } from '../_constants';
-
-let user = JSON.parse(localStorage.getItem('user'));
-const initialState = user ? { isLoggedIn: true, user } : { isLoggedIn: false, user:null};
+import Cookies from 'js-cookie';
+const initialState = {
+   isLoggedIn: false,
+   data: null,
+ };
+ 
+ const user = Cookies.get('username');
+ if (user) {
+   initialState.isLoggedIn = true;
+ }
 
 export function authentication(state = initialState, action) {
+
    switch (action.type) {
       case userConstants.LOGIN_SUCCESS:
          return {
             ...state,
             isLoggedIn: true,
-            user: action.user
+            data: {
+               username: action.payload.username
+            }
          };
       case userConstants.LOGOUT:
          return {

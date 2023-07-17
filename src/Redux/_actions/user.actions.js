@@ -1,21 +1,25 @@
 import { userConstants } from '../_constants';
-
+import Cookies from 'js-cookie';
 export const userActions = {
    login,
    logout
 }
 
 function login(data) {
-   localStorage.setItem('user', JSON.stringify("Login Successfully"));
+   console.log(data)
+   Cookies.set('username', data.username)
    return (dispatch) => {
       dispatch(success(data))
    }
    function success(data) {
-      return { type: userConstants.LOGIN_SUCCESS, data }
+      return {
+         type: userConstants.LOGIN_SUCCESS,
+         payload: data
+      }
    }
 }
 
 function logout() {
-   localStorage.removeItem('user');
+   Cookies.remove('username')
    return { type: userConstants.LOGOUT };
 }

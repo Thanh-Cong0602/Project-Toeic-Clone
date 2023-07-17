@@ -42,7 +42,7 @@ function LoginPage() {
          }
          else {
             loginAPI('accounts/login', data).then((res) => {
-               dispatch(userActions.login(res.data))
+               dispatch(userActions.login(data))
                toast.success(res.data.message, { autoClose: 2000 })
                navigate('/')
             }).catch((error) => {
