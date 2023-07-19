@@ -3,20 +3,21 @@ import './PlayGamePage.css'
 import { getQuestionByCategory } from '../../../Api/Service/vocabulary.service';
 import { getCorrectAnswer } from '../../../Api/Service/vocabulary.service';
 import { userId } from '../../../Api/userID';
-import { toast } from "react-toastify";
 import ImageVocabulary from '../../../Assets/vocabulary.jpg'
 import { useDispatch } from 'react-redux';
 import { vocabularyActions } from '../../../Redux/_actions';
 import { CloseCircleTwoTone } from '@ant-design/icons';
+import { toast } from "react-toastify";
+
 function PlayGamePage({ setIsShowPlayGame }) {
    const [isShowAnswer, setIsShowAnswer] = useState(false);
-   const [selectedAnswers, setSelectedAnswers] = useState([]);
    const [questions, setQuestions] = useState([]);
    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
    const [currentQuestion, setCurrentQuestion] = useState({});
+   const [isLastQuestion, setIsLastQuestion] = useState(false);
+   const [selectedAnswers, setSelectedAnswers] = useState([]);
    const [correctAnswer, setCorrectAnswer] = useState([])
    const [countCorrectAnswer, setCountCorrectAnswer] = useState(0);
-   const [isLastQuestion, setIsLastQuestion] = useState(false);
    const [isDataLoaded, setDataLoaded] = useState(false);
    const dispatch = useDispatch()
    useEffect(() => {

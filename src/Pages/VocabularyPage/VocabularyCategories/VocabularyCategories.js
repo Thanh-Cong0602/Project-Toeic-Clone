@@ -4,7 +4,7 @@ import { Row, Col } from 'antd'
 import { getVocabularyCategories } from '../../../Api/Service/vocabulary.service'
 import { toast } from "react-toastify";
 import { ReadOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { vocabularyActions } from '../../../Redux/_actions';
 import { useDispatch } from 'react-redux';
 
@@ -32,7 +32,7 @@ const VocabularyCategories = () => {
                <Row gutter={[16, 16]}>
                   {categories.map((item, index) => (
                      <Col span={8} key={item.id}>
-                        <Link  to={"/vocabularybycategory"}
+                        <Link  to={`/vocabularybycategory/${item.name}`}
                         onClick={() => handleCategoryClick(item.id)} >
                            <div className='item'>
                               <div className='icon'>

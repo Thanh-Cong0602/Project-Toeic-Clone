@@ -5,8 +5,8 @@ import Banner from './Components/Banner/Banner';
 import LoginPage from './Pages/LoginPage/LoginPage';
 import RegisterPage from './Pages/RegisterPage/RegisterPage';
 import HomePage from './Pages/HomePage/HomePage';
-import VocabularyPage from './Pages/VocabularyPage/VocabularyPage';
-import VocabularyByCategory from './Pages/VocabularyPage/VocabularyByCategory/VocabularyByCategory';
+import VocabularyCategories from './Pages/VocabularyPage/VocabularyCategories/VocabularyCategories';
+import VocabularyByCategory from './Pages/VocabularyPage/VocabularyByCategory';
 import Footer from './Components/Footer/Footer';
 import { ToastContainer } from 'react-toastify';
 import { useSelector } from 'react-redux';
@@ -17,11 +17,10 @@ function App() {
          <BrowserRouter>
             <Navbar />
             <Routes>
-               <Route path="/" element={
-                  <>
-                     <Banner />
-                     <HomePage />
-                  </>
+               <Route path="/" element={<>
+                  <Banner />
+                  <HomePage />
+               </>
                } />
             </Routes>
             <Routes >
@@ -31,23 +30,16 @@ function App() {
                <Route path="/register" element={isLoggedIn ? <Navigate to="/" replace /> : <RegisterPage />} />
             </Routes>
             <Routes>
-               <Route path="/vocabulary" element={
-                  <>
-                     <Banner />
-                     <VocabularyPage />
-                  </>
-               }>
-               </Route>
-            </Routes>
-            <Routes>
-               <Route path="/vocabularybycategory" element={
+               <Route path="/vocabulary" element={<>
+                  <Banner />
+                  <VocabularyCategories />
+               </>} />
+               <Route path="/vocabularybycategory/:name" element={
                   <>
                      <Banner />
                      <VocabularyByCategory />
                   </>
-               }>
-                  
-               </Route>
+               } />
             </Routes>
             <Footer />
          </BrowserRouter>
