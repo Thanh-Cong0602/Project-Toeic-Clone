@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Navbar.css'
 import { Row, Col } from 'antd'
 import Logo from '../../Assets/vo_dien.jpg'
+import TCN from '../../Assets/tcn.JPG'
 import { SearchOutlined } from '@ant-design/icons'
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
@@ -21,17 +22,21 @@ function Navbar() {
    }
    const toggleDropdown = () => {
       setDropdownVisible(!isDropdownVisible);
-    };
-    useEffect(() => {
-
-    }, [isDropdownVisible])
+   };
+   useEffect(() => {
+   }, [isDropdownVisible])
+   
+   const [currentPage, setCurrentPage] = useState('');
+   const handleLinkClick = (page) => {
+      setCurrentPage(page);
+   }
    return (
       <>
          <div className='navbar'>
             <Row>
                <Col span={2}>
-                  <Link to={"/"}>
-                     <div className='logo'>
+                  <Link to={"/"} onClick={() => handleLinkClick('homepage') }>
+                  <div className={`logo ${currentPage === 'homepage' ? 'btn-active': ''}`}>
                         <img src={Logo} alt='Logo' />
                      </div>
                   </Link>
@@ -45,29 +50,33 @@ function Navbar() {
                         </div>
                      </Col>
                      <Col span={4}>
-                        <Link >
-                           <div className='navbar-item'>
+                        <Link to={"/vocabulary"} onClick={() => handleLinkClick('vocabulary') }> 
+                           <div className={`navbar-item 
+                           ${ currentPage === 'vocabulary' ? 'btn-active': ''}`}>
                               Vocabulary
                            </div>
                         </Link>
                      </Col>
                      <Col span={4}>
-                        <Link >
-                           <div className='navbar-item'>
+                        <Link to={"/grammar"} onClick={() => handleLinkClick('grammar')}>
+                        <div className={`navbar-item 
+                           ${ currentPage === 'grammar' ? 'btn-active': ''}`}>
                               Grammar
                            </div>
                         </Link>
                      </Col>
                      <Col span={4}>
-                        <Link >
-                           <div className='navbar-item'>
+                     <Link to={"/blog"} onClick={() => handleLinkClick('blog')}>
+                        <div className={`navbar-item 
+                           ${ currentPage === 'blog' ? 'btn-active': ''}`}>
                               Blog
                            </div>
                         </Link>
                      </Col>
                      <Col span={4}>
-                        <Link >
-                           <div className='navbar-item'>
+                     <Link to={"/test"} onClick={() => handleLinkClick('test')}>
+                        <div className={`navbar-item 
+                           ${ currentPage === 'test' ? 'btn-active': ''}`}>
                               Test
                            </div>
                         </Link>
@@ -84,11 +93,11 @@ function Navbar() {
                         </Link>
                      </>
                   ) :
-                  (
-                     <>
-                        <div className='login-success'>
-                           <div className='logo-user'>
-                                 <img src={Logo} alt='Logo' />
+                     (
+                        <>
+                           <div className='login-success'>
+                              <div className='logo-user'>
+                                 <img src={TCN} alt='Logo' />
                               </div>
                               <div className='username'>
                                  {username}
@@ -96,12 +105,12 @@ function Navbar() {
                               <div className=''>
                                  <BellFilled />
                               </div>
-                              <div className='menu-infor' >
-                                 <MenuOutlined onClick={toggleDropdown}/>
+                              <div className='menu-infor' onClick={toggleDropdown}>
+                                 <MenuOutlined />
                               </div>
                            </div>
-                              {isDropdownVisible && (
-                                 <div className="menu-login-dropdown">
+                           {isDropdownVisible && (
+                              <div className="menu-login-dropdown">
                                  <Link>
                                     <div className='menu-dropdown-item'>
                                        <div className='icon'>
@@ -127,7 +136,7 @@ function Navbar() {
                                     </div>
                                  </Link>
                               </div>
-                              )}
+                           )}
                         </>
                      )}
                </Col>
