@@ -1,4 +1,4 @@
-.main-study-view {
+.main-study-vocabulary {
    padding: 0 24px;
    background: #E7ECF9;
 
@@ -36,10 +36,19 @@
             & .btn-question {
                height: 30px;
                width: 30px;
-               border-radius: 5px;
+               border-radius: 10px;
                box-sizing: border-box;
-               background: #d2caca;
+               background: #f2f3f7;
                cursor: pointer;
+            }
+
+            & .btn-question:hover {
+               background: #b1afaf;
+               border-radius: 50%;
+               height: 25px;
+               width: 25px;
+               transition: background 2s;
+               z-index: 1;
             }
          }
       }
@@ -64,38 +73,44 @@
                height: 30px;
                background: #b6b1b1;
                box-sizing: border-box;
-               border-radius: 7px;
+               border-radius: 10px;
                cursor: pointer;
             }
          }
+
          & .result {
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 20px;
+
             & .correct {
                display: flex;
                padding: auto 0;
                gap: 5px;
+
                & .btn-correct {
-                  background: #357a32;
+                  background: rgb(130, 188, 36);
                   height: 12px;
                   width: 12px;
                   border-radius: 2px;
                   margin: auto 0;
                }
+
                & .btn-incorrect {
-                  background: red;
+                  background: #ff5252;
                   height: 12px;
                   width: 12px;
                   border-radius: 2px;
                   margin: auto 0;
                }
+
                & .show-correct {
                   font-weight: bold;
                }
             }
          }
+
          & .completed-review {
             text-decoration: none;
             padding-bottom: 20px;
@@ -122,12 +137,14 @@
          border-radius: 15px;
          margin-top: 80px;
          margin-bottom: 90px;
+
          & .exitPlayGame {
             padding: 10px 20px;
             text-align: right;
             font-size: 30px;
             cursor: pointer;
          }
+
          & .flash-card-questions {
             max-width: 1116px;
             padding: 0 20px;
@@ -222,30 +239,32 @@
 }
 
 .currentQuestion {
-   border: 2px solid aqua !important;
+   border: 2px solid #007aff !important;
 }
 
 .answer-item-true {
-   background: #357a32 !important;
+   background: rgb(130, 188, 36) !important;
    color: white;
 }
+
 .answer-item-false {
-   background: red !important;
+   background: #ff5252 !important;
    color: white;
 }
 
 .borderAnswer {
-   border: 3px solid black !important;
+   border: 3px solid #211f1f !important;
 }
 
 .selected {
-   background: #E7ECF9 !important;
+   background: #999 !important;
 }
 
 .correctAnswer {
    padding-top: 10px;
    color: black;
    font-size: 18px;
+
    span {
       color: red !important;
    }

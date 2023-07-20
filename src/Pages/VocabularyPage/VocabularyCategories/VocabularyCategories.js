@@ -7,7 +7,7 @@ import { ReadOutlined } from '@ant-design/icons';
 import { Link} from 'react-router-dom';
 import { vocabularyActions } from '../../../Redux/_actions';
 import { useDispatch } from 'react-redux';
-
+import Aos from 'aos';
 const VocabularyCategories = () => {
    const [categories, setCategories] = useState([]);
    const dispatch = useDispatch()
@@ -19,8 +19,9 @@ const VocabularyCategories = () => {
       })
    }, [])
    
-   const handleCategoryClick = (categoryID) => {
-      dispatch(vocabularyActions.setCurrentCategoryID(categoryID));
+   const handleCategoryClick = (categoryName, categoryID) => {
+      const category = {categoryName: categoryName, categoryID: categoryID}
+      dispatch(vocabularyActions.setCurrentCategory(category));
    };
    return (
       <>
@@ -33,7 +34,7 @@ const VocabularyCategories = () => {
                   {categories.map((item, index) => (
                      <Col span={8} key={item.id}>
                         <Link  to={`/vocabularybycategory/${item.name}`}
-                        onClick={() => handleCategoryClick(item.id)} >
+                        onClick={() => handleCategoryClick(item.name, item.id)} >
                            <div className='item'>
                               <div className='icon'>
                               <ReadOutlined />

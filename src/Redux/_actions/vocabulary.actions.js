@@ -1,14 +1,14 @@
 import { vocabularyConstants } from "../_constants";
 
 export const vocabularyActions = {
-   setCurrentCategoryID,
+   setCurrentCategory,
    saveResultPlayGame
 }
 
-function setCurrentCategoryID(categoryID) {
+function setCurrentCategory(category) {
    return {
-      type: vocabularyConstants.SET_CURRENT_CATEGORY_ID,
-      payload: categoryID
+      type: vocabularyConstants.SET_CURRENT_CATEGORY,
+      payload: category
    }
 }
 

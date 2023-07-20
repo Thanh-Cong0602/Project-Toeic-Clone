@@ -4,12 +4,16 @@ import { getQuestionByCategory } from '../../../Api/Service/vocabulary.service';
 import { getCorrectAnswer } from '../../../Api/Service/vocabulary.service';
 import { userId } from '../../../Api/userID';
 import ImageVocabulary from '../../../Assets/vocabulary.jpg'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { vocabularyActions } from '../../../Redux/_actions';
 import { CloseCircleTwoTone } from '@ant-design/icons';
 import { toast } from "react-toastify";
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+AOS.init();
 
 function PlayGamePage({ setIsShowPlayGame }) {
+   const currentCategory = useSelector(state => state.vocabulary.currentCategory)
    const [isShowAnswer, setIsShowAnswer] = useState(false);
    const [questions, setQuestions] = useState([]);
    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -37,7 +41,7 @@ function PlayGamePage({ setIsShowPlayGame }) {
    useEffect(() => {
       setCurrentQuestion(questions[currentQuestionIndex])
       setIsLastQuestion(currentQuestionIndex === questions.length - 1);
-   }, [currentQuestionIndex])
+   }, [currentQuestionIndex, questions])
 
    function shuffleArray(array) {
       for (let i = array.length - 1; i > 0; i--) {
@@ -110,15 +114,15 @@ function PlayGamePage({ setIsShowPlayGame }) {
    return (
       <>
          {isDataLoaded && (
-            <div className='main-study-view'>
+            <div className='main-study-vocabulary'>
                <div className='main-study-flex'>
                   <div className='study-layout-left'>
                      <div className='title'>
-                        <h2>Contracts</h2>
+                        <h2>{currentCategory.categoryName}</h2>
                      </div>
                      {!isShowAnswer ? (
                         <>
-                           <div className='showQuestion'>
+                           <div className='showQuestion' data-aos = "fade-right" data-aos-delay="400">
                               <div className='allQuestions'>
                                  {questions.map((item, index) => (
                                     <div className={`btn-question 
@@ -179,7 +183,7 @@ function PlayGamePage({ setIsShowPlayGame }) {
                   </div>
 
                   <div className='study-layout-right'>
-                     <div className='flash-card-overview'>
+                     <div className='flash-card-overview' data-aos = "fade-left" data-aos-delay="400">
                         {isShowAnswer ? (
                            <></>
                         ) : (
@@ -255,7 +259,7 @@ function PlayGamePage({ setIsShowPlayGame }) {
                               }
                            </div>
                            <div className='image-vocabulary'>
-                              <img src={ImageVocabulary} alt='image vocabulary' />
+                              <img src={ImageVocabulary} alt='Vocabulary' />
                            </div>
                         </div>
                         {isShowAnswer ? (

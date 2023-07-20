@@ -1,27 +1,27 @@
-.main-study-view {
+.main-study-vocabulary {
   padding: 0 24px;
   background: #E7ECF9;
 }
-.main-study-view .main-study-flex {
+.main-study-vocabulary .main-study-flex {
   display: grid;
   grid-template-columns: 335px auto;
   margin-top: 20px;
 }
-.main-study-view .study-layout-left .title {
+.main-study-vocabulary .study-layout-left .title {
   text-align: center;
   font-weight: 600;
   font-size: 30px;
   line-height: 45px;
   color: #1d1d1d;
 }
-.main-study-view .study-layout-left .showQuestion {
+.main-study-vocabulary .study-layout-left .showQuestion {
   border-radius: 10px;
   box-shadow: 1px 2px 3px 2px #999;
   height: auto;
   width: 300px;
   background: white;
 }
-.main-study-view .study-layout-left .showQuestion .allQuestions {
+.main-study-vocabulary .study-layout-left .showQuestion .allQuestions {
   padding: 20px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -29,22 +29,30 @@
   place-items: center;
   row-gap: 20px;
 }
-.main-study-view .study-layout-left .showQuestion .allQuestions .btn-question {
+.main-study-vocabulary .study-layout-left .showQuestion .allQuestions .btn-question {
   height: 30px;
   width: 30px;
-  border-radius: 5px;
+  border-radius: 10px;
   box-sizing: border-box;
-  background: #d2caca;
+  background: #f2f3f7;
   cursor: pointer;
 }
-.main-study-view .study-layout-left .showAnswer {
+.main-study-vocabulary .study-layout-left .showQuestion .allQuestions .btn-question:hover {
+  background: #b1afaf;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  transition: background 2s;
+  z-index: 1;
+}
+.main-study-vocabulary .study-layout-left .showAnswer {
   border-radius: 10px;
   box-shadow: 1px 2px 3px 2px #999;
   height: auto;
   width: 300px;
   background: white;
 }
-.main-study-view .study-layout-left .showAnswer .answer-items {
+.main-study-vocabulary .study-layout-left .showAnswer .answer-items {
   padding: 20px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -52,58 +60,58 @@
   place-items: center;
   row-gap: 20px;
 }
-.main-study-view .study-layout-left .showAnswer .answer-items .answer-item {
+.main-study-vocabulary .study-layout-left .showAnswer .answer-items .answer-item {
   width: 30px;
   height: 30px;
   background: #b6b1b1;
   box-sizing: border-box;
-  border-radius: 7px;
+  border-radius: 10px;
   cursor: pointer;
 }
-.main-study-view .study-layout-left .showAnswer .result {
+.main-study-vocabulary .study-layout-left .showAnswer .result {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
 }
-.main-study-view .study-layout-left .showAnswer .result .correct {
+.main-study-vocabulary .study-layout-left .showAnswer .result .correct {
   display: flex;
   padding: auto 0;
   gap: 5px;
 }
-.main-study-view .study-layout-left .showAnswer .result .correct .btn-correct {
-  background: #357a32;
+.main-study-vocabulary .study-layout-left .showAnswer .result .correct .btn-correct {
+  background: rgb(130, 188, 36);
   height: 12px;
   width: 12px;
   border-radius: 2px;
   margin: auto 0;
 }
-.main-study-view .study-layout-left .showAnswer .result .correct .btn-incorrect {
-  background: red;
+.main-study-vocabulary .study-layout-left .showAnswer .result .correct .btn-incorrect {
+  background: #ff5252;
   height: 12px;
   width: 12px;
   border-radius: 2px;
   margin: auto 0;
 }
-.main-study-view .study-layout-left .showAnswer .result .correct .show-correct {
+.main-study-vocabulary .study-layout-left .showAnswer .result .correct .show-correct {
   font-weight: bold;
 }
-.main-study-view .study-layout-left .showAnswer .completed-review {
+.main-study-vocabulary .study-layout-left .showAnswer .completed-review {
   text-decoration: none;
   padding-bottom: 20px;
   cursor: pointer;
   font-size: 18px;
   color: blue;
 }
-.main-study-view .study-layout-left .showAnswer .completed-review:hover {
+.main-study-vocabulary .study-layout-left .showAnswer .completed-review:hover {
   text-decoration: underline;
 }
-.main-study-view .study-layout-right {
+.main-study-vocabulary .study-layout-right {
   margin-left: 10px;
   margin-right: 10px;
   position: relative;
 }
-.main-study-view .study-layout-right .flash-card-overview {
+.main-study-vocabulary .study-layout-right .flash-card-overview {
   position: relative;
   background: #fff;
   padding: 40px;
@@ -111,50 +119,50 @@
   margin-top: 80px;
   margin-bottom: 90px;
 }
-.main-study-view .study-layout-right .flash-card-overview .exitPlayGame {
+.main-study-vocabulary .study-layout-right .flash-card-overview .exitPlayGame {
   padding: 10px 20px;
   text-align: right;
   font-size: 30px;
   cursor: pointer;
 }
-.main-study-view .study-layout-right .flash-card-overview .flash-card-questions {
+.main-study-vocabulary .study-layout-right .flash-card-overview .flash-card-questions {
   max-width: 1116px;
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
 }
-.main-study-view .study-layout-right .flash-card-overview .flash-card-questions .show-Question {
+.main-study-vocabulary .study-layout-right .flash-card-overview .flash-card-questions .show-Question {
   text-align: left;
   padding-top: 20px;
 }
-.main-study-view .study-layout-right .flash-card-overview .flash-card-questions .show-Question .question {
+.main-study-vocabulary .study-layout-right .flash-card-overview .flash-card-questions .show-Question .question {
   font-weight: bold;
   font-size: 20px;
   padding-bottom: 20px;
 }
-.main-study-view .study-layout-right .flash-card-overview .flash-card-questions .show-Question .answer {
+.main-study-vocabulary .study-layout-right .flash-card-overview .flash-card-questions .show-Question .answer {
   margin-top: 15px;
   display: flex;
   gap: 5px;
   font-size: 18px;
 }
-.main-study-view .study-layout-right .flash-card-overview .flash-card-questions .show-Question .answer .custom-radio {
+.main-study-vocabulary .study-layout-right .flash-card-overview .flash-card-questions .show-Question .answer .custom-radio {
   width: 15px;
   height: 15px;
   margin-top: 5px;
   cursor: pointer;
 }
-.main-study-view .study-layout-right .flash-card-overview .flash-card-questions .show-Question .answer label {
+.main-study-vocabulary .study-layout-right .flash-card-overview .flash-card-questions .show-Question .answer label {
   cursor: pointer;
 }
-.main-study-view .study-layout-right .flash-card-overview .btn-review {
+.main-study-vocabulary .study-layout-right .flash-card-overview .btn-review {
   margin-top: 30px;
   padding: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.main-study-view .study-layout-right .flash-card-overview .btn-review .btn-prev {
+.main-study-vocabulary .study-layout-right .flash-card-overview .btn-review .btn-prev {
   border: none;
   border-radius: 20px;
   padding: 10px 30px;
@@ -163,12 +171,12 @@
   font-weight: bold;
   cursor: pointer;
 }
-.main-study-view .study-layout-right .flash-card-overview .btn-review .disable {
+.main-study-vocabulary .study-layout-right .flash-card-overview .btn-review .disable {
   color: rgba(0, 0, 0, 0.25);
   background-color: rgba(0, 0, 0, 0.04);
   cursor: not-allowed;
 }
-.main-study-view .study-layout-right .flash-card-overview .btn-review .btn-next {
+.main-study-vocabulary .study-layout-right .flash-card-overview .btn-review .btn-next {
   border: none;
   border-radius: 20px;
   padding: 10px 30px;
@@ -177,7 +185,7 @@
   font-weight: bold;
   cursor: pointer;
 }
-.main-study-view .study-layout-right .flash-card-overview .btn-review .btn-submit {
+.main-study-vocabulary .study-layout-right .flash-card-overview .btn-review .btn-submit {
   border: none;
   border-radius: 20px;
   padding: 10px 30px;
@@ -197,25 +205,25 @@
 }
 
 .currentQuestion {
-  border: 2px solid aqua !important;
+  border: 2px solid #007aff !important;
 }
 
 .answer-item-true {
-  background: #357a32 !important;
+  background: rgb(130, 188, 36) !important;
   color: white;
 }
 
 .answer-item-false {
-  background: red !important;
+  background: #ff5252 !important;
   color: white;
 }
 
 .borderAnswer {
-  border: 3px solid black !important;
+  border: 3px solid #211f1f !important;
 }
 
 .selected {
-  background: #E7ECF9 !important;
+  background: #999 !important;
 }
 
 .correctAnswer {
