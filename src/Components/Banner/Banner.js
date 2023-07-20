@@ -1,10 +1,13 @@
 import React from 'react'
 import './Banner.css'
+import BannerEnglist from '../../Assets/banner_english.avif'
 function Banner() {
   return (
     <>
-    <div className='banner'>
-      This is my banner
+    <div className='banner'>  
+      <div className='bannerEnglish'>
+      <img src={BannerEnglist}/>
+      </div>
     </div>
     </>
   )

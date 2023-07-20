@@ -1,0 +1,17 @@
+.vocabulary-categories .main-list-view {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.vocabulary-categories .main-list-view .item {
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 1px 2px 3px 2px #999;
+  display: flex;
+  text-align: left;
+  gap: 10px;
+  max-width: 250px;
+  font-size: 15px;
+}
+.vocabulary-categories .main-list-view .item .item-name {
+  color: black;
+}/*# sourceMappingURL=VocabularyCategories.css.map */

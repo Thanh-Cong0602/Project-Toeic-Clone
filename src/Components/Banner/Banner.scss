@@ -4,4 +4,13 @@
    height: 200px;
    background: whitesmoke;
    box-shadow: 1px 3px 1px #999;
+   & .bannerEnglish {
+      height: 200px;
+      img {
+         object-fit: cover;
+         height: 200px;
+         width: 80%;
+      }
+   }
+  
 }
