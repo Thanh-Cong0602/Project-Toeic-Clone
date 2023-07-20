@@ -7,6 +7,9 @@ import RegisterPage from './Pages/RegisterPage/RegisterPage';
 import HomePage from './Pages/HomePage/HomePage';
 import VocabularyCategories from './Pages/VocabularyPage/VocabularyCategories/VocabularyCategories';
 import VocabularyByCategory from './Pages/VocabularyPage/VocabularyByCategory';
+import Practice from './Pages/PracticeL&RPage/Practice';
+import ListeningPracticePage from './Pages/PracticeL&RPage/ListeningPracticePage/ListeningPracticePage';
+import PlayGameListenPage from './Pages/PracticeL&RPage/PlayGameListenPage/PlayGameListenPage';
 import Footer from './Components/Footer/Footer';
 import { ToastContainer } from 'react-toastify';
 import { useSelector } from 'react-redux';
@@ -40,6 +43,11 @@ function App() {
                      <VocabularyByCategory />
                   </>
                } />
+            </Routes>
+            <Routes>
+               <Route path='/practice' element ={<Practice/>}/>
+               <Route path='/listenPractice' element ={<ListeningPracticePage/>}/>
+               <Route path='/playGameListen' element ={ <PlayGameListenPage />} />
             </Routes>
             <Footer />
          </BrowserRouter>

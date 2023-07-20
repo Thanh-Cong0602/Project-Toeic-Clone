@@ -1,0 +1,67 @@
+.listen-overview {
+  width: 99%;
+  border-radius: 10px;
+  height: 500px;
+  box-shadow: 0px 2px 2px 0.5px #999;
+  margin: 10px auto;
+}
+.listen-overview .title {
+  margin: 40px;
+  font-size: 40px;
+  color: blue;
+  font-weight: bold;
+}
+.listen-overview .icon-title {
+  padding: 0px 40px;
+  display: flex;
+  gap: 10px;
+}
+.listen-overview .icon-title .icon-headphone {
+  height: 30px;
+  width: 30px;
+  border-radius: 5px;
+  box-shadow: 1px 2px 3px 1px aqua;
+}
+.listen-overview .icon-title .word {
+  margin: auto 0px;
+}
+.listen-overview .main-topic-listen {
+  margin: 20px auto;
+  max-width: 1000px;
+  position: relative;
+}
+.listen-overview .main-topic-listen .tcn {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  height: 250px;
+}
+.listen-overview .main-topic-listen .tcn .item-topic {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 200px;
+  min-height: 185px;
+  box-shadow: 1px 2px 3px #999;
+}
+.listen-overview .main-topic-listen .tcn .item-topic .item-image {
+  height: 100px;
+  overflow: hidden;
+  width: 100%;
+}
+.listen-overview .main-topic-listen .tcn .item-topic .item-image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.listen-overview .main-topic-listen .tcn .item-topic:hover img {
+  transform: scale(1.1);
+}
+.listen-overview .main-topic-listen .tcn .icon-chevron {
+  margin-top: 100px;
+}
+.listen-overview .main-topic-listen .tcn::-webkit-scrollbar {
+  display: none;
+}/*# sourceMappingURL=Listening.css.map */

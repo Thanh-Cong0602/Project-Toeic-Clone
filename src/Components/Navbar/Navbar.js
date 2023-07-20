@@ -58,10 +58,10 @@ function Navbar() {
                         </Link>
                      </Col>
                      <Col span={4}>
-                        <Link to={"/grammar"} onClick={() => handleLinkClick('grammar')}>
+                        <Link to={"/practice"} onClick={() => handleLinkClick('practice')}>
                         <div className={`navbar-item 
-                           ${ currentPage === 'grammar' ? 'btn-active': ''}`}>
-                              Grammar
+                           ${ currentPage === 'practice' ? 'btn-active': ''}`}>
+                              Practice L&W
                            </div>
                         </Link>
                      </Col>
